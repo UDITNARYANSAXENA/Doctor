@@ -40,7 +40,7 @@ const MyAppointments = () => {
     let config = {
       method:"post",
       maxBodyLength:Infinity,
-      url:"http://localhost:4001/api/user/orders",
+      url:"https://doctor-5sad.onrender.com/api/user/orders",
       headers:{
         'Content-Type':'application/json'
       },
@@ -101,7 +101,7 @@ const MyAppointments = () => {
 
     const checkPayment= async()=>{
       try {
-        const {data}= await axios.post("http://localhost:4001/api/user/verifyRazorpay",{
+        const {data}= await axios.post("https://doctor-5sad.onrender.com/api/user/verifyRazorpay",{
           razorpay_order_id:responseId},{headers:{token}})
 
           console.log(data)
@@ -131,7 +131,7 @@ const MyAppointments = () => {
 
     // const paymentId= e.target.paymentId.value;
 
-    axios.post(`http://localhost:4001/api/user/checkPayment/${paymentId}`,{appointmentId})
+    axios.post(`https://doctor-5sad.onrender.com/api/user/checkPayment/${paymentId}`,{appointmentId})
     .then((response)=>{
       console.log("fetch payment",response);
       setResponseState(response.data)
