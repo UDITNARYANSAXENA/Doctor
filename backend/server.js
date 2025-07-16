@@ -9,17 +9,16 @@ import userRouter from './routes/userRoute.js'
 import Razorpay from 'razorpay'
 // import paymentRouter from './routes/paymentRoute.js'
 
-// app config
 const app = express()
 const port = process.env.PORT || 4001
 connectDB()
 connectCloudinary()
 
-// middlewares
+
 app.use(express.json())
 app.use(cors())
 
-// api end point
+
 app.use('/api/admin', adminRouter) 
 app.use('/api/doctor', doctorRouter)
 app.use('/api/user', userRouter)
