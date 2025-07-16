@@ -8,16 +8,25 @@ import axios from 'axios'
 
 const Appointment = () => {
 
+
   const { docId } = useParams()
+
   const { doctors, currencySymbol, backendUrl, token, getDoctorsData } = useContext(AppContext)
+
 
   const daysOfWeek = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT']
 
+
   const navigate = useNavigate()
+
   const [docInfo, setDocInfo] = useState(null)
+
   const [docSlots, setDocSlots] = useState([])
+
   const [slotIndex, setSlotIndex] = useState(0)
+
   const [slotTime, setSlotTime] = useState('')
+  
 
   const fetchDocInfo = async () => {
     const docInfo = doctors.find(doc => doc._id === docId)
