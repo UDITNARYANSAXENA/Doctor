@@ -9,12 +9,20 @@ import AppContextProvider from './context/AppContext.jsx'
 
 createRoot(document.getElementById('root')).render(
   <BrowserRouter>
+
     <AdminContextProvider>
+
       <DoctorContextProvider>
+
         <AppContextProvider>
+
           <App />
+
         </AppContextProvider>
+
       </DoctorContextProvider>
+
     </AdminContextProvider>
+    
   </BrowserRouter>,
 )
